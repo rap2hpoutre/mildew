@@ -1,6 +1,6 @@
 [package]
 name = "mildew"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["rap2hpoutre <raphaelht@gmail.com>"]
 license = "MIT"
 description = "Rust helpers"
