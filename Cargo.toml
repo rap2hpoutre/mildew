@@ -8,3 +8,4 @@ repository = "https://github.com/rap2hpoutre/mildew"
 
 [dependencies]
 hyper = "0.9"
+rand = "0.3.14"
