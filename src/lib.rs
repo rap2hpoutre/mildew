@@ -12,22 +12,11 @@ mod tests {
 }
 
 pub fn get_url_content(url: &str) -> Option<String> {
-    let client = Client::new();
     let mut s = String::new();
 
-    match client.get(url).send() {
-        Ok(mut res) => {
-            match res.read_to_string(&mut s) {
-                Ok(_) => {
-                    Some(s)
-                },
-                Err(_) => {
-                    None
-                }
-            }
-        },
-        Err(_) => {
-            None
-        }
-    }
+    Client::new()
+        .get(url)
+        .send()
+        .map(|mut res| res.read_to_string(&mut s).ok().map(|_| s))
+        .unwrap_or(None)
 }
